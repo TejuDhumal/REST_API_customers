@@ -1,6 +1,7 @@
 package net.springrest.springboot.controller;
 
 import lombok.AllArgsConstructor;
+
 import net.springrest.springboot.model.customer;
 import net.springrest.springboot.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class MyController {
     @Autowired
 
     private CustomerService service;
-    @PostMapping("/{customers}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+
     public customer createCustomer(@RequestBody customer custom){
         return service.addcustomer(custom);
     }
@@ -27,13 +28,13 @@ public class MyController {
 
     }
     @GetMapping("/{customerId}")
-    public customer getCustomer(@PathVariable String customerId){
+    public customer getCustomer(@PathVariable String customerId)  {
         return service.getCustomerBycustomerId(customerId);
 
     }
     @GetMapping("/name/{name}")
-    public List<customer> findCustomerUsingName(@PathVariable String name){
-        return service.getCustomerByName(name);
+    public List<customer> findCustomerUsingName(@PathVariable String name) {
+        return  service.getCustomerByName(name);
     }
 
     @GetMapping("/age/{age}")
@@ -46,8 +47,8 @@ public List<customer> findCustomerByEmail(@PathVariable String email){
         return service.getCustomerByEmail(email);
 }
     @PutMapping
-    public customer modifyCustomer(@RequestBody customer customer){
-        return service.updatecustomer(customer);
+    public customer modifyCustomer(@RequestBody customer custom){
+        return service.updatecustomer(custom);
 
     }
     @DeleteMapping("/{customerId}")

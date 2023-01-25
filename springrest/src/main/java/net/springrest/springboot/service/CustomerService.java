@@ -1,5 +1,6 @@
 package net.springrest.springboot.service;
 
+
 import net.springrest.springboot.model.customer;
 import net.springrest.springboot.repository.Customer_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +16,19 @@ public class CustomerService {
 
     //CRUD
 
-    public customer addcustomer(customer cust){
-        cust.setCustomerId(UUID.randomUUID().toString().split("-")[0]);
-        return repository.save(cust);
+    public customer addcustomer(customer custom){
+        custom.setCustomerId(UUID.randomUUID().toString().split("-")[0]);
+        return repository.save(custom);
     }
     public List<customer> findAllcustomers(){
         return repository.findAll();
     }
-    public customer getCustomerBycustomerId(String customerId){
-        return repository.findById(customerId).get();
+    public customer getCustomerBycustomerId(String customerId)  {
+                    return repository.findById(customerId).get();
     }
+    public List<customer> getCustomerByName(String name)  {
+       return repository.findByName(name);
 
-    public List<customer> getCustomerByName(String name){
-        return repository.findByName(name);
     }
     public List<customer> getCustomerByAge(int age){
         return repository.findByAge(age);
@@ -35,7 +36,7 @@ public class CustomerService {
     public List<customer> getCustomerByEmail(String emailid){
         return repository.findByEmail(emailid);
     }
-    public customer updatecustomer(customer customerRequest){
+    public customer updatecustomer (customer customerRequest){
       customer existingCustomer=  repository.findById(customerRequest.getCustomerId()).get();
       existingCustomer.setDescription(customerRequest.getDescription());
       existingCustomer.setAge(customerRequest.getAge());
@@ -46,7 +47,7 @@ public class CustomerService {
     }
     public String deleteCustomer(String customerId){
         repository.deleteById(customerId);
-        return customerId+ "customer deleted";
+        return customerId+ "customer details deleted";
     }
 
 }
