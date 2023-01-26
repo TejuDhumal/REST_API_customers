@@ -1,50 +1,48 @@
 package net.springrest.springboot.service;
 
 
-import net.springrest.springboot.model.customer;
-import net.springrest.springboot.repository.Customer_Repository;
+import net.springrest.springboot.model.Customer;
+import net.springrest.springboot.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 @Service
-
 public class CustomerService {
     @Autowired
-    private Customer_Repository repository;
+    private CustomerRepository repository;
 
     //CRUD
-
-    public customer addcustomer(customer custom){
+     public Customer addCustomer(Customer custom){
         custom.setCustomerId(UUID.randomUUID().toString().split("-")[0]);
         return repository.save(custom);
     }
-    public List<customer> findAllcustomers(){
-        return repository.findAll();
-    }
-    public customer getCustomerBycustomerId(String customerId)  {
-                    return repository.findById(customerId).get();
-    }
-    public List<customer> getCustomerByName(String name)  {
-       return repository.findByName(name);
 
+    public List<Customer> findAllcustomers(){
+         return repository.findAll();
     }
-    public List<customer> getCustomerByAge(int age){
-        return repository.findByAge(age);
-    }
-    public List<customer> getCustomerByEmail(String emailid){
-        return repository.findByEmail(emailid);
-    }
-    public customer updatecustomer (customer customerRequest){
-      customer existingCustomer=  repository.findById(customerRequest.getCustomerId()).get();
-      existingCustomer.setDescription(customerRequest.getDescription());
-      existingCustomer.setAge(customerRequest.getAge());
-      existingCustomer.setName(customerRequest.getName());
-      existingCustomer.setEmail(customerRequest.getEmail());
-      return repository.save(existingCustomer);
 
+    public Customer getCustomerBycustomerId(String customerId)  {
+         return repository.findById(customerId).get();
     }
+
+    public List<Customer> getCustomerByName(String name)  {
+         return repository.findByName(name);
+    }
+
+    public List<Customer> getCustomerByAge(int age){
+         return repository.findByAge(age);
+    }
+
+    public List<Customer> getCustomerByEmail(String emailId){
+         return repository.findByEmail(emailId);
+    }
+
+    public Customer updateCustomer (Customer customerRequest){
+         return repository.save(customerRequest);
+    }
+
     public String deleteCustomer(String customerId){
         repository.deleteById(customerId);
         return customerId+ "customer details deleted";

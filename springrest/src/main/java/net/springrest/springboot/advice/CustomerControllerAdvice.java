@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.NoSuchElementException;
 @ControllerAdvice
-
-public class MyControllerAdvice {
+public class  CustomerControllerAdvice {
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handleNoSuchElementException(NoSuchElementException elementException){
         return new ResponseEntity<String>("invalid Id , No such value is present Please correct it", HttpStatus.NOT_FOUND);

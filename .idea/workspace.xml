@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18e0b4fa-3ff5-45a4-9c42-5c9da3b3f9e1" name="Changes" comment="" />
+    <list default="true" id="18e0b4fa-3ff5-45a4-9c42-5c9da3b3f9e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/springrest/src/main/java/net/springrest/springboot/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springrest/src/main/java/net/springrest/springboot/controller/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springrest/src/main/java/net/springrest/springboot/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springrest/src/main/java/net/springrest/springboot/service/CustomerService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2Kivzf9LaeFuY5zbNkwbTz3CjVv" />
   <component name="ProjectViewState">
@@ -16,7 +22,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "E:/springrest"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/springrest",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -27,7 +35,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674470484546</updated>
+      <workItem from="1674752491358" duration="114000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
